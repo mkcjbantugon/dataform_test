@@ -1,0 +1,34 @@
+tables:
+  - name: bikes
+    description: Contains sample bike data
+    columns:
+      - name: ID
+        description: Unique identifier for each bike rental.
+      - name: Month
+        description: Short notation for the month 
+      - name: Day of Week
+        description: Day of Week (Monday, Tuesday, etc.)
+      - name: Hour
+        description: Hour part
+      - name: Temperature
+        description: Temperature in degree C.
+      - name: Humidity
+        description: Humidity in degree C.
+      - name: Wind Speed
+        description: Temperature in mi/hr.
+      - name: Visibility
+        description: Visibility.
+      - name: Dew Point Temperature
+        description: Temperature in degree C.   
+      - name: UV Index
+        description: UV Index.
+      - name: Rainfall
+        description: Rainfall.
+      - name: Snowfall
+        description: Snowfall.
+      - name: Season
+        description: Four seasons (Spring, Summer, Fall, Winter).
+      - name: Holiday
+        description: True or False.
+      - name: Rentals
+        description: Number of rentals.
