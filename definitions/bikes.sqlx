@@ -1,0 +1,9 @@
+config {
+  type: "table",
+  schema: "mbtest",
+  name: "bikes",
+}
+
+SELECT *
+FROM `cosmic-kiln-461219-b5.mbtest.bikes`
+

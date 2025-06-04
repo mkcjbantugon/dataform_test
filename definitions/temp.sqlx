@@ -1,0 +1,13 @@
+-- Config blocks allow you to configure, document, and test your data assets.
+config {
+  type: "table", 
+  schema: "mbtest",
+  name: "temp",
+}
+
+-- The rest of a SQLX file contains your SELECT statement used to create the table.
+
+SELECT 
+  Temperature,
+  ROUND(Temperature * 1.8 +32,2) AS temp_F
+FROM ${ref("bikes")}

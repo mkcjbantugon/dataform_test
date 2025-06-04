@@ -1,9 +1,0 @@
-config {
-    type        : "table",
-    description : "Description of the source table"
-    }
-SELECT 1 AS num
-UNION ALL 
-SELECT 4 AS num 
-UNION ALL 
-SELECT 7 AS num 
