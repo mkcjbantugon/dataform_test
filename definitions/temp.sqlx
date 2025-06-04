@@ -3,6 +3,11 @@ config {
   type: "table", 
   schema: "mbtest",
   name: "temp",
+  description: "Bike Rentals table in Chicago",
+  columns: {
+    Temperature: "The temp in Celsius",
+    temp_F: "The temp in Fahrenheit",
+  }
 }
 
 -- The rest of a SQLX file contains your SELECT statement used to create the table.
