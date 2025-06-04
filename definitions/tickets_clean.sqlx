@@ -1,0 +1,58 @@
+config { 
+  type: "table",
+  schema: "mbtest",
+  name: "tickets_clean",
+  description: "Tickets clean",
+  columns: {
+    row: "Surrogate key",
+    data_id: "The unique identifier for a ticket id",
+    ticket_id: "The ticket number",
+    ticket_title_summary: "The summary of the ticket title",
+    priority_score: "The priority score based on calculation",
+    adds_revenue_score: "The revenue score",
+    cycle_time_seconds: "Starts when the issue moves from a In Progress to Done status",
+    lead_time_seconds: "The time interval between the moment an issue is requested to the moment it is completed.",
+    ticket_created_at: "The timestamp when the ticket was created",
+    ticket_resolution_date: "The timestamp when the ticket was closed",
+    status_id: "The unique identifier for each status",
+    status_name: "Status name for a ticket",
+    is_closed: "True if ticket is closed else open",
+    priority_id: "The unique identifier for each priority",
+    priority_name: "Priority name for a ticket",
+    issue_id: "The unique identifier for each issue",
+    issue_name: "Issue name for a ticket",
+    creator: "The name of the ticket creator",
+    reporter : "The name of the ticket reporter",
+    assignee : "The name of the assignee",
+    components: "The name of the associated components of the ticket",
+  }
+}
+
+-- Use the ref() function to manage dependencies.
+-- Learn more about ref() and other built in functions here: https://cloud.google.com/dataform/docs/dataform-core
+
+SELECT 
+    row,
+  data_id,
+  ticket_id,
+  ticket_title_summary,
+  priority_score,
+  adds_revenue_score,
+  SAFE_CAST(cycle_time_seconds AS INT64) AS cycle_time_seconds,
+  SAFE_CAST(lead_time_seconds AS INT64) AS lead_time_seconds,
+  ticket_created_at,
+  SAFE_CAST(ticket_resolution_date AS timestamp) AS ticket_resolution_date,
+  status_id,
+  status_name,
+  is_closed,
+  priority_id,
+  priority_name,
+  issue_id,
+  issue_name,
+  creator,
+  reporter,
+  assignee,
+  components
+from ${ref("tickets")}
+WHERE creator = 'Jon Snow'
+order by `row` ASC
