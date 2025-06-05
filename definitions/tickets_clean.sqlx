@@ -1,6 +1,6 @@
 config { 
   type: "table",
-  schema: "mbtest",
+  schema: "jira",
   name: "tickets_clean",
   description: "Tickets clean",
   columns: {
@@ -16,7 +16,7 @@ config {
     ticket_resolution_date: "The timestamp when the ticket was closed",
     status_id: "The unique identifier for each status",
     status_name: "Status name for a ticket",
-    is_closed: "True if ticket is closed else open",
+    // is_closed: "True if ticket is closed else open",
     priority_id: "The unique identifier for each priority",
     priority_name: "Priority name for a ticket",
     issue_id: "The unique identifier for each issue",
@@ -44,7 +44,7 @@ SELECT
   SAFE_CAST(ticket_resolution_date AS timestamp) AS ticket_resolution_date,
   status_id,
   status_name,
-  is_closed,
+  -- is_closed,
   priority_id,
   priority_name,
   issue_id,
