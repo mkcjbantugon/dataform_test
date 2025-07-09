@@ -23,7 +23,7 @@ config {
     issue_name: "Issue name for a ticket",
     creator: "The name of the ticket creator",
     reporter : "The name of the ticket reporter",
-    assignee : "The name of the assignee",
+    assignee : "",
     components: "The name of the associated components of the ticket",
   }
 }
